@@ -77,14 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Emagreça em 30 Dias | Ebook de Dicas de Emagrecimento" },
+      { name: "description", content: "Ebook prático com dicas para emagrecer em 30 dias. Método simples, receitas baratas e treinos em casa." },
+      { name: "author", content: "Emagreça em 30 Dias" },
+      { property: "og:title", content: "Emagreça em 30 Dias | Ebook de Dicas de Emagrecimento" },
+      { property: "og:description", content: "Ebook prático com dicas para emagrecer em 30 dias. Método simples, receitas baratas e treinos em casa." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@Emagreca30Dias" },
     ],
     links: [
       {
