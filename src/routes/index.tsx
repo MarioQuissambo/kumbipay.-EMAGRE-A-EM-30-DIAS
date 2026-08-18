@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import ebookCover from "@/assets/ebook-cover.png";
+import bannerAsset from "@/assets/banner-emagrece.png.asset.json";
 
 const CHECKOUT_URL = "https://pay.kumbipay.com/0558e70f-b8cd-4c2a-b8ba-c34e899e30bc";
 
@@ -36,30 +37,37 @@ const faqs = [
 ];
 
 const modules = [
-  "Plano de 30 dias passo a passo",
-  "Cardápios simples e baratos",
+  "Plano alimentar completo",
   "Exercícios para fazer em casa",
-  "Mentalidade para não desistir",
-  "Dicas para acelerar o metabolismo",
+  "Desafio de 30 dias",
+  "Receitas fitness deliciosas",
+  "Hábitos que aceleram resultados",
+];
+
+const bonuses = [
+  "Lista de compras saudáveis",
+  "Calendário de acompanhamento diário",
+  "Tabela de controlo de água",
+  "Planeador semanal de refeições",
 ];
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Emagreça em 30 Dias | Ebook de Dicas de Emagrecimento" },
+      { title: "Emagreça em 30 Dias e Transforme o Seu Corpo" },
       {
         name: "description",
         content:
-          "Ebook completo com dicas práticas para emagrecer em 30 dias. Receitas simples, treinos em casa e método passo a passo. De 70.000 Kz por apenas 5.550 Kz.",
+          "Emagreça em 30 dias e transforme o seu corpo sem dietas radicais. Plano alimentar, treinos em casa e receitas fitness. De 70.000 Kz por apenas 5.550 Kz.",
       },
       {
         property: "og:title",
-        content: "Emagreça em 30 Dias | Ebook de Dicas de Emagrecimento",
+        content: "Emagreça em 30 Dias e Transforme o Seu Corpo",
       },
       {
         property: "og:description",
         content:
-          "Método simples para emagrecer em 30 dias com receitas práticas e treinos em casa. Oferta especial por tempo limitado.",
+          "Sem dietas radicais: plano alimentar, treinos em casa e receitas simples. Oferta por tempo limitado.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
