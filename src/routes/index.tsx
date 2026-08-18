@@ -97,9 +97,9 @@ function SalesPage() {
 
 function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-primary/95 backdrop-blur">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-        <span className="text-sm font-semibold tracking-tight text-foreground">
+        <span className="text-sm font-extrabold uppercase tracking-tight text-primary-foreground">
           Emagreça em 30 Dias
         </span>
         <Button asChild size="sm" className="bg-highlight text-highlight-foreground hover:bg-highlight/90">
@@ -114,29 +114,40 @@ function Header() {
 
 function HeroSection() {
   return (
-    <section className="mx-auto max-w-5xl px-4 py-16 text-center md:py-24">
-      <span className="inline-block rounded-full bg-highlight/15 px-3 py-1 text-xs font-medium text-highlight">
-        Oferta especial por tempo limitado
+    <section className="mx-auto max-w-5xl px-4 py-12 text-center md:py-20">
+      <span className="inline-block rounded-full bg-highlight px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-highlight-foreground">
+        Guia premium de saúde e bem-estar
       </span>
-      <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground md:text-6xl">
-        Descubra como emagrecer em 30 dias sem passar fome e sem academia
+      <h1 className="mt-6 text-4xl font-extrabold uppercase leading-[1.05] tracking-tight text-foreground md:text-6xl">
+        Emagreça em 30 dias e transforme o seu corpo{" "}
+        <span className="text-highlight">sem dietas radicais</span>
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-        Um ebook prático com dicas simples, receitas baratas e rotinas rápidas para transformar o seu corpo no seu ritmo.
+        Plano alimentar completo, treinos em casa e receitas fitness deliciosas. Mais saúde, mais disposição, mais autoestima.
       </p>
-      <div className="mx-auto mt-10 max-w-sm">
+      <p className="mx-auto mt-5 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">
+        <span className="text-highlight">★★★★★</span> +3.000 pessoas já transformaram o corpo com este guia
+      </p>
+      <div className="mt-10 overflow-hidden rounded-2xl border border-border shadow-xl">
+        <img
+          src={bannerAsset.url}
+          alt="Ebook Emagreça em 30 Dias: plano alimentar, exercícios em casa e receitas fitness"
+          className="w-full"
+        />
+      </div>
+      <div className="mx-auto mt-8 max-w-xs">
         <img
           src={ebookCover}
           alt="Capa do ebook Emagreça em 30 Dias"
           width={512}
           height={512}
-          className="mx-auto w-full rounded-2xl shadow-xl"
+          className="mx-auto w-full rounded-2xl shadow-lg"
         />
       </div>
       <div className="mt-10 flex flex-col items-center gap-4">
         <Button asChild size="lg" className="h-14 px-8 text-lg bg-highlight text-highlight-foreground hover:bg-highlight/90">
           <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
-            Quero emagrecer agora
+            Quero garantir a minha oferta agora
           </a>
         </Button>
         <p className="text-sm text-muted-foreground">
