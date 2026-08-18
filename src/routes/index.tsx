@@ -206,15 +206,25 @@ function ModulesSection() {
             ))}
           </ul>
         </div>
-        <div className="rounded-2xl border border-border bg-card p-8 shadow-sm">
-          <h3 className="text-xl font-semibold text-foreground">
-            Tudo o que você precisa, em um só lugar
+        <div className="rounded-2xl border border-border bg-primary p-8 text-primary-foreground shadow-sm">
+          <h3 className="text-xl font-extrabold uppercase">
+            Bónus exclusivos
           </h3>
-          <p className="mt-4 text-muted-foreground">
-            Chega de procurar informação solta na internet. Este guia junta o essencial para você começar hoje e ver resultados em 30 dias.
+          <p className="mt-3 text-sm opacity-90">
+            Ferramentas práticas para te acompanhar em cada passo:
           </p>
+          <ul className="mt-5 space-y-3">
+            {bonuses.map((bonus) => (
+              <li key={bonus} className="flex items-start gap-3">
+                <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-highlight text-highlight-foreground text-sm">
+                  ✓
+                </span>
+                <span>{bonus}</span>
+              </li>
+            ))}
+          </ul>
           <div className="mt-6">
-            <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button asChild className="w-full bg-highlight text-highlight-foreground hover:bg-highlight/90">
               <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
                 Garantir meu acesso
               </a>
