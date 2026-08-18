@@ -2,8 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import ebookCover from "@/assets/ebook-cover.png";
 
-const CHECKOUT_URL =
-  "https://kubeta.ao/produto/transforme_seu_corpo_o_guia_definitivo_para_emagrecer_e_definir_a_silhueta_11776?r=Fkg4112933Ol2i";
+const CHECKOUT_URL = "https://pay.kumbipay.com/0558e70f-b8cd-4c2a-b8ba-c34e899e30bc";
 
 const priceOld = "70.000 Kz";
 const priceNow = "5.550 Kz";
