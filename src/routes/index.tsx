@@ -1,12 +1,17 @@
+import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import ebookCover from "@/assets/ebook-cover.png";
-import bannerAsset from "@/assets/banner-emagrece.png.asset.json";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const CHECKOUT_URL = "https://pay.kumbipay.com/0558e70f-b8cd-4c2a-b8ba-c34e899e30bc";
 
-const priceOld = "70.000 Kz";
-const priceNow = "5.550 Kz";
+const priceOld = "5.000 Kz";
+const priceNow = "3.500 Kz";
 
 const faqs = [
   {
@@ -58,7 +63,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Emagreça em 30 dias e transforme o seu corpo sem dietas radicais. Plano alimentar, treinos em casa e receitas fitness. De 70.000 Kz por apenas 5.550 Kz.",
+          "Emagreça em 30 dias e transforme o seu corpo sem dietas radicais. Plano alimentar, treinos em casa e receitas fitness. De 5.000 Kz por apenas 3.500 Kz.",
       },
       {
         property: "og:title",
@@ -80,6 +85,7 @@ function SalesPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
+      <CountdownBar />
       <main>
         <HeroSection />
         <ProblemSection />
@@ -112,6 +118,33 @@ function Header() {
   );
 }
 
+function CountdownBar() {
+  const [secondsLeft, setSecondsLeft] = useState(5 * 60);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setSecondsLeft((prev) => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  const minutes = String(Math.floor(secondsLeft / 60)).padStart(2, "0");
+  const seconds = String(secondsLeft % 60).padStart(2, "0");
+
+  return (
+    <div className="w-full bg-destructive text-destructive-foreground">
+      <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-1 px-4 py-3 text-center sm:flex-row sm:gap-3">
+        <span className="text-xs font-semibold uppercase tracking-wide sm:text-sm">
+          A sua oferta expira em
+        </span>
+        <span className="font-mono text-2xl font-extrabold tabular-nums">
+          {minutes}:{seconds}
+        </span>
+      </div>
+    </div>
+  );
+}
+
 function HeroSection() {
   return (
     <section className="mx-auto max-w-5xl px-4 py-12 text-center md:py-20">
@@ -128,22 +161,6 @@ function HeroSection() {
       <p className="mx-auto mt-5 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">
         <span className="text-highlight">★★★★★</span> +3.000 pessoas já transformaram o corpo com este guia
       </p>
-      <div className="mt-10 overflow-hidden rounded-2xl border border-border shadow-xl">
-        <img
-          src={bannerAsset.url}
-          alt="Ebook Emagreça em 30 Dias: plano alimentar, exercícios em casa e receitas fitness"
-          className="w-full"
-        />
-      </div>
-      <div className="mx-auto mt-8 max-w-xs">
-        <img
-          src={ebookCover}
-          alt="Capa do ebook Emagreça em 30 Dias"
-          width={512}
-          height={512}
-          className="mx-auto w-full rounded-2xl shadow-lg"
-        />
-      </div>
       <div className="mt-10 flex flex-col items-center gap-4">
         <Button asChild size="lg" className="h-14 px-8 text-lg bg-highlight text-highlight-foreground hover:bg-highlight/90">
           <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
@@ -307,7 +324,7 @@ function OfferSection() {
     <section className="bg-highlight/10">
       <div className="mx-auto max-w-3xl px-4 py-16 text-center md:py-24">
         <span className="inline-block rounded-full bg-destructive px-3 py-1 text-xs font-semibold text-destructive-foreground">
-          Desconto de 92% — por tempo limitado
+          Desconto de 30% — só nos próximos minutos
         </span>
         <h2 className="mt-6 text-3xl font-bold tracking-tight text-foreground md:text-5xl">
           Aproveite antes que o preço volte ao normal
@@ -344,17 +361,22 @@ function FaqSection() {
       <h2 className="text-center text-3xl font-bold tracking-tight text-foreground md:text-4xl">
         Tire suas dúvidas
       </h2>
-      <div className="mt-10 space-y-4">
-        {faqs.map((faq) => (
-          <div
+      <Accordion type="single" collapsible className="mt-10 space-y-4">
+        {faqs.map((faq, index) => (
+          <AccordionItem
             key={faq.question}
-            className="rounded-xl border border-border bg-card p-6"
+            value={`item-${index}`}
+            className="rounded-xl border border-border bg-card px-6"
           >
-            <h3 className="font-semibold text-foreground">{faq.question}</h3>
-            <p className="mt-2 text-muted-foreground">{faq.answer}</p>
-          </div>
+            <AccordionTrigger className="text-left font-semibold text-foreground">
+              {faq.question}
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              {faq.answer}
+            </AccordionContent>
+          </AccordionItem>
         ))}
-      </div>
+      </Accordion>
       <div className="mt-10 rounded-2xl border border-success bg-success/10 p-8 text-center">
         <h3 className="text-xl font-semibold text-success-foreground">
           Garantia de 7 dias
