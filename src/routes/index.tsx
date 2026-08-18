@@ -2,8 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import ebookCover from "@/assets/ebook-cover.png";
 
-const CHECKOUT_URL =
-  "https://kubeta.ao/produto/transforme_seu_corpo_o_guia_definitivo_para_emagrecer_e_definir_a_silhueta_11776?r=Fkg4112933Ol2i";
+const CHECKOUT_URL = "https://pay.kumbipay.com/0558e70f-b8cd-4c2a-b8ba-c34e899e30bc";
 
 const priceOld = "70.000 Kz";
 const priceNow = "5.550 Kz";
@@ -25,9 +24,9 @@ const faqs = [
       "Não. As receitas usam ingredientes fáceis de encontrar em Angola e preparo rápido. Nada de produtos importados ou difíceis.",
   },
   {
-    question: "É seguro comprar pela Kubeta?",
+    question: "É seguro comprar pela KumbiPay?",
     answer:
-      "A Kubeta é uma plataforma de pagamentos confiável em Angola. O pagamento é processado de forma segura e você recebe o acesso ao seu ebook.",
+      "A KumbiPay é uma plataforma de pagamentos confiável em Angola. O pagamento é processado de forma segura e você recebe o acesso ao seu ebook.",
   },
   {
     question: "E se eu não gostar?",
@@ -133,7 +132,7 @@ function HeroSection() {
           </a>
         </Button>
         <p className="text-sm text-muted-foreground">
-          Pagamento seguro via Kubeta • Acesso imediato
+          Pagamento seguro via KumbiPay • Acesso imediato
         </p>
       </div>
     </section>
