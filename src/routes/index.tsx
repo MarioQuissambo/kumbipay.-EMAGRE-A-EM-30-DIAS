@@ -24,9 +24,9 @@ const faqs = [
       "Não. As receitas usam ingredientes fáceis de encontrar em Angola e preparo rápido. Nada de produtos importados ou difíceis.",
   },
   {
-    question: "É seguro comprar pela Kubeta?",
+    question: "É seguro comprar pela KumbiPay?",
     answer:
-      "A Kubeta é uma plataforma de pagamentos confiável em Angola. O pagamento é processado de forma segura e você recebe o acesso ao seu ebook.",
+      "A KumbiPay é uma plataforma de pagamentos confiável em Angola. O pagamento é processado de forma segura e você recebe o acesso ao seu ebook.",
   },
   {
     question: "E se eu não gostar?",
@@ -132,7 +132,7 @@ function HeroSection() {
           </a>
         </Button>
         <p className="text-sm text-muted-foreground">
-          Pagamento seguro via Kubeta • Acesso imediato
+          Pagamento seguro via KumbiPay • Acesso imediato
         </p>
       </div>
     </section>
