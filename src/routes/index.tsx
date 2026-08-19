@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import logo from "@/assets/logo.png";
 
 const CHECKOUT_URL = "https://pay.kumbipay.com/0558e70f-b8cd-4c2a-b8ba-c34e899e30bc";
 
@@ -105,9 +106,18 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-primary/95 backdrop-blur">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-        <span className="text-sm font-extrabold uppercase tracking-tight text-primary-foreground">
-          Emagreça em 30 Dias
-        </span>
+        <a href="#top" className="flex items-center gap-2">
+          <img
+            src={logo}
+            alt="Logo Emagreça em 30 Dias"
+            width={40}
+            height={40}
+            className="h-9 w-9 rounded-full bg-background/90 p-0.5"
+          />
+          <span className="text-sm font-extrabold uppercase tracking-tight text-primary-foreground">
+            Emagreça em 30 Dias
+          </span>
+        </a>
         <Button asChild size="sm" className="bg-highlight text-highlight-foreground hover:bg-highlight/90">
           <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
             Quero começar agora
@@ -147,7 +157,14 @@ function CountdownBar() {
 
 function HeroSection() {
   return (
-    <section className="mx-auto max-w-5xl px-4 py-12 text-center md:py-20">
+    <section id="top" className="mx-auto max-w-5xl px-4 py-12 text-center md:py-20">
+      <img
+        src={logo}
+        alt="Logo Emagreça em 30 Dias"
+        width={96}
+        height={96}
+        className="mx-auto mb-6 h-24 w-24"
+      />
       <span className="inline-block rounded-full bg-highlight px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-highlight-foreground">
         Guia premium de saúde e bem-estar
       </span>
