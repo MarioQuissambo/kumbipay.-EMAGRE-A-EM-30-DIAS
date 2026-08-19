@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import bannerAsset from "@/assets/banner-emagrece.png.asset.json";
 import {
   Accordion,
   AccordionContent,
@@ -106,24 +105,9 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-primary/95 backdrop-blur">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-        <a
-          href={CHECKOUT_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2"
-        >
-          <span className="inline-flex h-10 w-10 shrink-0 overflow-hidden rounded-full border-2 border-highlight bg-card">
-            <img
-              src={bannerAsset.url}
-              alt="Ebook Emagreça em 30 Dias"
-              className="h-full w-full object-cover"
-              loading="lazy"
-            />
-          </span>
-          <span className="text-sm font-extrabold uppercase tracking-tight text-primary-foreground">
-            Emagreça em 30 Dias
-          </span>
-        </a>
+        <span className="text-sm font-extrabold uppercase tracking-tight text-primary-foreground">
+          Emagreça em 30 Dias
+        </span>
         <Button asChild size="sm" className="bg-highlight text-highlight-foreground hover:bg-highlight/90">
           <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
             Quero começar agora
