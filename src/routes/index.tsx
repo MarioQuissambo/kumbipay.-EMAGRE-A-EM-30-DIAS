@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
+import bannerAsset from "@/assets/banner-emagrece.png.asset.json";
 import {
   Accordion,
   AccordionContent,
